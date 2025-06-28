@@ -1,0 +1,29 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/backend/$1"
+    }
+  ],
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "outputDirectory": "build" }
+    },
+    {
+      "src": "backend/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/backend/(.*)",
+      "dest": "/backend/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
+    }
+  ]
+}
