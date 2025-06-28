@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+console.log('Backend function is starting...'); // Added for debugging
+
 app.use(cors());
 app.use(express.json()); // Para parsear corpos de requisição JSON
 const port = 3001;
