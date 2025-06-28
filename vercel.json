@@ -15,15 +15,5 @@
       "src": "backend/index.js",
       "use": "@vercel/node"
     }
-  ],
-  "routes": [
-    {
-      "src": "/backend/(.*)",
-      "dest": "/backend/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
-    }
   ]
 }
