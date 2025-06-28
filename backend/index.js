@@ -79,6 +79,4 @@ app.post('/verify', (req, res) => {
   res.json(result);
 });
 
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Backend listening at http://localhost:${port}`);
-});
+module.exports = app;
