@@ -1,8 +1,16 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api"
+      "source": "/api/document",
+      "destination": "/api/document.js"
+    },
+    {
+      "source": "/api/rules",
+      "destination": "/api/rules.js"
+    },
+    {
+      "source": "/api/verify",
+      "destination": "/api/verify.js"
     }
   ],
   "builds": [
@@ -12,7 +20,15 @@
       "config": { "outputDirectory": "build" }
     },
     {
-      "src": "api/index.js",
+      "src": "api/document.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/rules.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/verify.js",
       "use": "@vercel/node"
     }
   ]

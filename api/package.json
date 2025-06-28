@@ -3,8 +3,5 @@
   "version": "1.0.0",
   "description": "Serverless API for Papers, Please Like Game",
   "main": "index.js",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0"
-  }
+  "dependencies": {}
 }
