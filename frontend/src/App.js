@@ -55,11 +55,9 @@ function App() {
 
       
       if (action === 'approve' && result.isValid) {
-        decisionCorrect = true;
         setMessage('Aprovado corretamente!');
         setMessageType('success');
       } else if (action === 'deny' && !result.isValid) {
-        decisionCorrect = true;
         setMessage(`Negado corretamente! Razões: ${result.reasons.join(', ')}`);
         setMessageType('success');
       } else if (action === 'approve' && !result.isValid) {
