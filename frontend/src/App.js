@@ -36,7 +36,7 @@ function App() {
   useEffect(() => {
     fetchRules();
     fetchNewDocument();
-  }, []);
+  }, [fetchRules, fetchNewDocument]);
 
   
 
@@ -53,7 +53,7 @@ function App() {
       });
       const result = await response.json();
 
-      let decisionCorrect = false;
+      
       if (action === 'approve' && result.isValid) {
         decisionCorrect = true;
         setMessage('Aprovado corretamente!');
