@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import { FaUser, FaGlobe, FaIdCard, FaCalendarAlt, FaCheck, FaTimes } from 'react-icons/fa';
 
@@ -17,21 +17,21 @@ function App() {
     imageUrl: 'Imagem', // Although not a required field, good to have for consistency
   };
 
-  const fetchNewDocument = () => {
+  const fetchNewDocument = useCallback(() => {
     setMessage(''); // Clear previous messages
     setMessageType('');
     fetch(`/api/document`)
       .then(response => response.json())
       .then(data => setDocumentData(data))
       .catch(error => console.error('Error fetching document:', error));
-  };
+  }, []);
 
-  const fetchRules = () => {
-    fetch(`${BACKEND_URL}/rules`)
+  const fetchRules = useCallback(() => {
+    fetch(`/api/rules`)
       .then(response => response.json())
       .then(data => setRules(data))
       .catch(error => console.error('Error fetching rules:', error));
-  };
+  }, []);
 
   useEffect(() => {
     fetchRules();
