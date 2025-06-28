@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/backend/$1"
+      "destination": "/api"
     }
   ],
   "builds": [
@@ -12,7 +12,7 @@
       "config": { "outputDirectory": "build" }
     },
     {
-      "src": "backend/index.js",
+      "src": "api/index.js",
       "use": "@vercel/node"
     }
   ]
