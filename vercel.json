@@ -1,35 +1,18 @@
 {
-  "rewrites": [
-    {
-      "source": "/api/document",
-      "destination": "/api/document.js"
-    },
-    {
-      "source": "/api/rules",
-      "destination": "/api/rules.js"
-    },
-    {
-      "source": "/api/verify",
-      "destination": "/api/verify.js"
-    }
-  ],
   "builds": [
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": { "outputDirectory": "build" }
+      "config": { "distDir": "build" }
     },
-    {
-      "src": "api/document.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "api/rules.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "api/verify.js",
-      "use": "@vercel/node"
-    }
+    { "src": "api/document.js", "use": "@vercel/node" },
+    { "src": "api/rules.js", "use": "@vercel/node" },
+    { "src": "api/verify.js", "use": "@vercel/node" }
+  ],
+  "rewrites": [
+    { "source": "/api/document", "destination": "/api/document.js" },
+    { "source": "/api/rules", "destination": "/api/rules.js" },
+    { "source": "/api/verify", "destination": "/api/verify.js" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
