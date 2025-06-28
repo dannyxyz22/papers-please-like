@@ -5,7 +5,7 @@ import { FaUser, FaGlobe, FaIdCard, FaCalendarAlt, FaCheck, FaTimes } from 'reac
 function App() {
   const [documentData, setDocumentData] = useState(null);
   const [rules, setRules] = useState(null);
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+  
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState(''); // 'success', 'error', 'info'
 
